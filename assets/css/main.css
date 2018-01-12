@@ -349,3 +349,53 @@ span{
 #contmovies{
   margin-top: 2em;
 }
+.mt-5{
+  
+  margin-right: 0em;
+  
+}
+
+.footer_back{
+    color: white;
+    background-color: #c91d61;
+    background: linear-gradient(20deg, black, #2C2C2C);
+    background-size: 1000% 1000% !important;
+    -webkit-animation: changeColors 30s ease infinite;
+    -moz-animation: changeColors 30s ease infinite;
+    -o-animation: changeColors 30s ease infinite;
+    animation: changeColors 30s ease infinite;
+    text-align: center;
+    padding-top: 2em;
+    padding-left: 4em;
+}
+
+@-webkit-keyframes changeColors {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+
+}
+
+.social-icons-header a{
+  font-size: 20px;
+  color: rgb(248, 158, 0);
+  padding-right: 1em;
+  padding-left: 2em;
+}
+
+.row_footer{
+  margin-right: 0px;
+}
+
+.txt_footer a{
+  color: #fff;
+  font-size: 10px;
+  cursor: pointer;
+ 
+}
