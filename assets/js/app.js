@@ -167,7 +167,7 @@ $(document).ready(function(){
 
 /*------------------------------------------------------------------
 Función Slider
-------------------------------------------------------------------*/
+
 /*------------------------------------------------------------------
 Función Buscador de Peliculas
 ------------------------------------------------------------------*/
@@ -175,6 +175,7 @@ $(document).ready(function(){
   // codigo Waleska
  $("#search-form").on("submit", function(e){
    $('#contmovies').html('');
+   $('.first_section').hide();
   var searchText = ($("#search-movie").val());
   //getKidsMovies(searchText);
   //$("#input-1").rating();
@@ -185,7 +186,7 @@ $(document).ready(function(){
 });
 
 function getMovies(searchText){
-  $.get("http://www.omdbapi.com/?apikey=3a181f1c&s="+searchText)
+  $.get("http://www.omdbapi.com/?apikey=54ac6e61&s="+searchText)
   .then( function(response) {
 
     var movies=response.Search;

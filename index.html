@@ -31,82 +31,46 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse nav_bar" id="navbar-collapse-2">
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a class="btn btn-default btn-outline btn-circle collapsed btn_sign"  data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Log in</a>
-          </li>
-          <li>
-            <a class="btn btn-default btn-outline btn-circle collapsed btn_search"  data-toggle="collapse" href="#nav-collapse3" aria-expanded="false" aria-controls="nav-collapse3">Search</a>
-          </li>
-          <li>
-            <a id="profile" class="btn btn-default btn-outline btn-circle collapsed btn_profile"  data-toggle="collapse" href="#nav-collapse4" aria-expanded="false" aria-controls="nav-collapse4">Profile <i class=""></i> </a>
-          </li>
-        </ul>
-        <ul class="collapse nav navbar-nav nav-collapse slide-down nav_float" role="search" id="nav-collapse4">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img class="img-circle" src="assets/images/amigo4.png" alt="maridlcrmn" width="20" /> User <span class="caret"></span></a>
-            <ul class="dropdown-menu menu_nav" role="menu">
-              <li><a id='detprofile' class="link btn_profile" href="#">My profile</a></li>
-              <!--<li><a href="#">Favorited</a></li>-->
-              <li class="divider"></li>
-              <li><a onclick="cerrar()" href="#" class="logout-profile">Logout</a></li>
-            </ul>
-          </li>
-        </ul>
-        <div class="collapse nav navbar-nav nav-collapse slide-down nav_float" id="nav-collapse3">
-          <form id="search-form" class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-              <input type="text" id="search-movie" class="form-control" placeholder="Search" />
-            </div>
-            <button type="submit" id="search-btn" class="btn btn-warning"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-          </form>
-        </div>
-        <div class="collapse nav navbar-nav nav-collapse slide-down nav_float" id="nav-collapse2">
-          <form class="navbar-form navbar-right form-inline" role="form">
-            <div class="form-group">
-              <label class="sr-only" for="Email">Email</label>
-              <input type="email" class="form-control" id="Email" placeholder="Email" autofocus required />
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="Password">Password</label>
-              <input type="password" class="form-control" id="Password" placeholder="Password" required />
-            </div>
-            <button onclick="ingresar()" type="submit" class="btn btn-success btn_log">Log in</button>
-            <button type="button" class="btn btn-success btn_log" data-toggle="modal" data-target="#mimodal">Sign in</button>
-          </form>
-        </div>
-        <!--modal-->
-        <div class="modal fade" id="mimodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content modal_background">
-              <div class="modal-header m_head">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Abre una cuenta</h4>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+      <ul id="login-dp" class="dropdown-menu">
+        <li>
+           <div class="row">
+              <div class="col-md-12">
+                Login via
+                <div class="social-buttons">
+                  <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                  <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                </div>
+                                or
+                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                    <div class="form-group">
+                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                       <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                       <label class="sr-only" for="exampleInputPassword2">Password</label>
+                       <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                    </div>
+                    <div class="form-group">
+                       <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    </div>
+                    <div class="checkbox">
+                       <label>
+                       <input type="checkbox"> keep me logged-in
+                       </label>
+                    </div>
+                 </form>
               </div>
-              <div class="modal-body">
-                <input id="email" class="input_register1" type="text" name="input" placeholder="Correo electrónico">
+              <div class="bottom text-center">
+                New here ? <a href="#"><b>Join Us</b></a>
               </div>
-              <div class="modal-body">
-                <input id="password" class="input_register1" type="text" name="input" placeholder="Contraseña">
-              </div>
-              <div class="modal-footer m_footer">
-                <button onclick="registrar()" type="submit" class="btn btn-primary btn_create" data-dismiss="modal">Crear cuenta</button>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        <!-- /.modalmm -->
-      </div><!-- /.navbar-collapse -->
-      <div class="col-xs-6 col-sm-6 col hidden-md col hidden-lg btn-group btn_movil">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="#">Log in</a></li>
-          <li><a href="#">Sign in</a></li>
-          <li><a href="#">My profile</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#" >Log out</a></li>
-        </ul>
+           </div>
+        </li>
+      </ul>
+        </li>
+      </ul>
       </div><!-- /.btn_movil -->
     </div><!-- /.container -->
   </nav><!-- /.navbar -->
@@ -114,9 +78,16 @@
   <!-- /.Descubre --> 
   <div class="row div_row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 gradient">
-      <a class="btn_movie" onclick="showMovie()"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Movies
+      <form id="search-form" role="search">
+        <div class="form-group">
+          <input type="text" id="search-movie" class="form-control" placeholder="Busca tu Pelicula..." />
+          <button type="submit" id="search-btn" class="btn btn-warning"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        </div>
+      </form>
+
+      <!--<a class="btn_movie" onclick="showMovie()"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Movies
         <p class="sub_title">Descubre películas, comenta, califica...</p>
-      </a>
+      </a>-->
     </div>
   </div>
   <!-- /.Descubre -->
@@ -164,94 +135,16 @@
   </section>
   <!--pagina principal-->
   <!--second section - descubre-->
-  <section class="second_section2">
+  <!--<section class="second_section2">
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <h2 class="title_2"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Descubre películas</h2>
           <div class="row">
-            <img  class = "picture" width="800px;" src="assets/images/iiima.jpg">
-            
-
-                 
-            
-            
-            
-          </div>
-          <div class="filter row hide">
-            <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-1 col-md-2 col-md-offset-3">
-              <select class="form-control sec-filter sec-year" >
-                <option value="0">Año</option>
-                <option value="2018">2018</option>
-                <option value="2017">2017</option>
-                <option value="2016">2016</option>
-                <option value="2015">2015</option>
-                <option value="2014">2014</option>
-              </select>
+            <div class="img-random">
             </div>
-            <!--<div class="btn-group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Año <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#">2017</a></li>
-                <li><a href="#">2016</a></li>
-                <li><a href="#">2015</a></li>
-                <li><a href="#">2014</a></li>
-                <li><a href="#">2013</a></li>
-              </ul>
-            </div>-->
-            <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-1 col-md-2 col-md-offset-3">
-              <select class="form-control sec-filter sec-type" >
-                <option value="0">Género</option>
-                <option value="Adventure">Acción</option>
-                <option value="Romance">Romance</option>
-                <option value="Drama">Drama</option>
-                <option value="Comedy">Comedia</option>
-                <option value="Thriller">Thriller</option>
-                <option value="Documentary">Documental</option>
-              </select>
-            </div>
-            <!--<div class="btn-group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Género <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Acción</a></li>
-                <li><a href="#">Romance</a></li>
-                <li><a href="#">Drama</a></li>
-                <li><a href="#">Comedia</a></li>
-              </ul>
-            </div>-->
-            <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-1 col-md-2 col-md-offset-3">
-              <select class="form-control sec-filter sec-language" >
-                <option value="0">Idioma</option>
-                <option value="Español">Español</option>
-                <option value="English">Inglés</option>
-                <option value="Frances">Francés</option>
-              </select>
-            </div>
-            <!--<div class="btn-group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Idioma <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Español</a></li>
-                <li><a href="#">Inglés</a></li>
-                <li><a href="#">Francés</a></li>
-              </ul>
-            </div>-->
-            <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-1 col-md-2 col-md-offset-3">
-              <select class="form-control sec-filter sec-category" >
-                <option value="0">Puntuación</option>
-                <option value="Muy Mala">★</option>
-                <option value="Mala">★★</option>
-                <option value="Buena">★★★</option>
-                <option value="Muy Buena">★★★★</option>
-                <option value="Excelente">★★★★★</option>
-              </select>
-            </div>
-            <!--<div class="btn-group">
+          </div>-->
+          <!--<div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Puntuación <span class="caret"></span>
               </button>
@@ -262,11 +155,11 @@
                 <li><a href="#"><label for="radio1">★</label><label for="radio1">★</label><label for="radio1">★</label><label for="radio1">★</label></a></li>
               </ul>
             </div>-->
-          </div><!--filter-->
-        </div><!--col-->
-      </div><!--row-->
-    </div><!--container-->
-  </section>
+       <!--   </div>-->
+        <!--</div>col-->
+      <!--</div>row-->
+    <!--</div>container-->
+ <!--</section>-->
   <!--second section - descubre-->
   <!--movie-section-->   
   <section class="movie-section">
@@ -318,7 +211,7 @@
   
   
   <!--fourth section-->
-  <section class="fourth_section" id="four-vis">
+  <section class="fourth_section hide" id="four-vis">
     <div class="container">
       <div class="row">
         <div id="more-movie"> 
