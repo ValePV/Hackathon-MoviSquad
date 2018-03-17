@@ -186,7 +186,7 @@ $(document).ready(function(){
 
 function getMovies(movie) {
   $.ajax({
-    url: `http://www.omdbapi.com/?s=${movie}&apikey=fed8ba13`,
+    url: `https://www.omdbapi.com/?s=${movie}&apikey=fed8ba13`,
     type: 'GET', // aca va si sube o baja get o post
     datatype: 'json'
   })
@@ -204,7 +204,7 @@ if (info.Response === 'false') {
   alert('Pelicula no encontrada');
 } else {
   // crea un div por cada resultado
-  $('.preview, #title, #year, #runtime, #img, #trailer, #results').empty();
+  $('#contmovies, #title, #year, #plot, #actors, #awards, #recaudacion, #country, #director, #genre, #language, #production, #metascore, #imdbRating, #released, #writer, #runtime, #img, #trailer, #results').empty();
   search.forEach(el => {
     // console.log(el.Title);
     $('#contmovies').append(`<div class='title_movie thumbnail card containpost'><img src='${el.Poster}'><p>${el.Title}</p></div>`);
@@ -213,7 +213,7 @@ if (info.Response === 'false') {
     let newTitle = ($(this).text()); // obtiene el titulo de la pelicula al ser clickeada
     // console.log(newTitle);
     $.ajax({
-      url: `http://www.omdbapi.com/?t=${newTitle}&plot=full&apikey=fed8ba13`,
+      url: `https://www.omdbapi.com/?t=${newTitle}&plot=full&apikey=fed8ba13`,
       type: 'GET', // aca va si sube o baja get o post
       datatype: 'json'
     })
@@ -231,7 +231,7 @@ function showMovie(info) {
 if (info.Response === 'false') {
   alert('Pelicula no encontrada');
 } else {
-  $('#contmovies, #title, #year, #runtime, #img, #trailer, #results').empty();
+  $('#contmovies, #title, #year, #plot, #actors, #awards, #recaudacion, #country, #director, #genre, #language, #production, #metascore, #imdbRating, #released, #writer, #runtime, #img, #trailer, #results').empty();
   $('#title').append(`Titulo: ${info.Title}`);
   $('#year').append(`Año: ${info.Year}`);
   $('#plot').append(`Historia: ${info.Plot}`);
