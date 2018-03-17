@@ -84,10 +84,10 @@ $('#sendBtn').click(function() {
     if ($('#comment').val() !== "") {
         $('#commentList').append(
           "<div class='commentTxt'>" +
-            "<p>" + 
+            "<p>" +
               "<span>  " + fullDate + " </span>" + $('#comment').val() +
             "</p>" +
-          "</div>"  
+          "</div>"
         );
       }
   });
@@ -106,7 +106,7 @@ $(document).ready(function(){
   for(i = 1;i <= imgItems; i++){
     $('.pagination').append('<li class="col-sm-2 col-md-2"><i class="fa fa-circle" aria-hidden="true"></i></li>');
   }
-  
+
   $('.slider li').hide(); //ocultar las imagenes
   $('.slider li:first').show();//mostrar la primera imagen
   $('.pagination li:first').css({'color':'#cd6e2e'}); //cambiar el color del primer icono
@@ -115,7 +115,7 @@ $(document).ready(function(){
   $('.pagination li').click(pagination);
   $('.right span').click(nextSlider);
   $('.left span').click(prevSlider);
-  
+
   //intervalos en n segundos
   setInterval(function(){
     nextSlider();
@@ -172,110 +172,131 @@ Función Slider
 Función Buscador de Peliculas
 ------------------------------------------------------------------*/
 $(document).ready(function(){
-  // codigo Waleska
  $("#search-form").on("submit", function(e){
    $('#contmovies').html('');
    $('.first_section').hide();
-  var searchText = ($("#search-movie").val());
+  let movie = ($("#search-movie").val());
   //getKidsMovies(searchText);
   //$("#input-1").rating();
-  getMovies(searchText);
+  getMovies(movie);
   e.preventDefault();
 
  });
 });
 
-function getMovies(searchText){
-  $.get("http://www.omdbapi.com/?apikey=54ac6e61&s="+searchText)
-  .then( function(response) {
-
-    var movies=response.Search;
-    console.log(movies);
-      for(var i=0 ; i<movies.length ; i++){
-        $("#contmovies").append("<div class='col-md-3'><div class='thumbnail card containpost'>" +
-          "<img width='130%' src='" + movies[i].Poster + "'><a href='#four-vis' class='bridge'>" +
-          "<h5 class='leter' onclick='seleccionar(event);'>" + movies[i].Title + "</h5></a></div></div>");
-    }
+function getMovies(movie) {
+  $.ajax({
+    url: `http://www.omdbapi.com/?s=${movie}&apikey=fed8ba13`,
+    type: 'GET', // aca va si sube o baja get o post
+    datatype: 'json'
+  })
+    .done(function(response) { // parametro
+      // console.log(response);
+      showInfo(response);
     })
-  .catch( function(err) {
-    alert( "$.get failed!" );
-  } );
-};
-
-//codigo Aileen
-var apikey = 'AIzaSyA9Yzrb5VubC6kzQnqCaUMSUd-QiRCtamI';
-
-$(function() {
-
-
-
-    var searchField = $('#search-movie');
-    var icon = $('#search-btn');
-
-    $('#search-form').submit( function(e) {
-        e.preventDefault();
+    .fail(function() {
+      console.log('error en conexión a API');
     });
-});
-var resEvent = none
-function seleccionar(event){
-  resEvent = event.target.innerHTML;
-  console.log(event.target.innerHTML);
-
+  function showInfo(info) {
+  let search = info.Search;
+// console.log(search);
+if (info.Response === 'false') {
+  alert('Pelicula no encontrada');
+} else {
+  // crea un div por cada resultado
+  $('.preview, #title, #year, #runtime, #img, #trailer, #results').empty();
+  search.forEach(el => {
+    // console.log(el.Title);
+    $('#contmovies').append(`<div class='title_movie thumbnail card containpost'><img src='${el.Poster}'><p>${el.Title}</p></div>`);
+  });
+  $('.title_movie').click(function() {
+    let newTitle = ($(this).text()); // obtiene el titulo de la pelicula al ser clickeada
+    // console.log(newTitle);
+    $.ajax({
+      url: `http://www.omdbapi.com/?t=${newTitle}&plot=full&apikey=fed8ba13`,
+      type: 'GET', // aca va si sube o baja get o post
+      datatype: 'json'
+    })
+      .done(function(response) {
+        console.log(response);
+        showMovie(response);
+      })
+      .fail(function() {
+        // console.log('error en conexión a API');
+      });
+  });
+}
+}
+function showMovie(info) {
+if (info.Response === 'false') {
+  alert('Pelicula no encontrada');
+} else {
+  $('#contmovies, #title, #year, #runtime, #img, #trailer, #results').empty();
+  $('#title').append(`Titulo: ${info.Title}`);
+  $('#year').append(`Año: ${info.Year}`);
+  $('#plot').append(`Historia: ${info.Plot}`);
+  $('#actors').append(`Actores Principales: ${info.Actors}`);
+  $('#awards').append(`Premios: ${info.Awards}`);
+  $('#recaudacion').append(`Recaudacion: ${info.BoxOffice}`);
+  $('#country').append(`Pais: ${info.Country}`);
+  $('#director').append(`Director: ${info.Director}`);
+  $('#genre').append(`Genero: ${info.Genre}`);
+  $('#language').append(`Idioma: ${info.Language}`);
+  $('#production').append(`Producido por: ${info.Production}`);
+  $('#metascore').append(`Nota de la crítica profesional: ${info.Metascore}`);
+  $('#imdbRating').append(`Nota del público: ${info.imdbRating}`);
+  $('#released').append(`Lanzamiento: ${info.Released}`);
+  $('#writer').append(`Escrito por: ${info.Writer}`);
+  $('#runtime').append(`Duración: ${info.Runtime}`);
+  $('#img').append(`<img src='${info.Poster}'>`);
+  $('#trailer').append('<button id="trailer-button" type="button" name="button">trailer</button>');
 };
-  console.log(resEvent);
-//funcion para al buscar
-function search() {
-    // borre los resultados anteriores
-    $('#results').html('');
-    // variable que contiene al valor ingresado por el usuario
-    var q = resEvent
-
-    // run get request on API
-    $.get(
-      "https://www.googleapis.com/youtube/v3/search", {
-            part: 'snippet, id',
-            q: q + '"official" + "trailer"',
-            type: 'video',
-            key: apikey,
-            maxResults: 1
-        }, function(data) {
-            // Log data
-            console.log(data);
-            $.each(data.items, function(i, item) {
-                // variable para almacenar los resultados
-                var output = getOutput(item);
-
-              // creacion para mostrar los resultados en el html
-                $('#results').append(output);
-            });
-
-        });
-};
-
-// Build output
+$('#trailer-button').click(function(){
+  let apikey = 'AIzaSyA9Yzrb5VubC6kzQnqCaUMSUd-QiRCtamI';
+  $.get(
+    "https://www.googleapis.com/youtube/v3/search", {
+          part: 'snippet, id',
+          q: info.Title + '"official" + "trailer"',
+          type: 'video',
+          key: apikey,
+          maxResults: 1
+      }, function(data) {
+          // Log data
+          // console.log(data);
+          $.each(data.items, function(i, item) {
+              // variable para almacenar los resultados
+              var output = getOutput(item);
+            // creacion para mostrar los resultados en el html
+              $('#results').append(output);
+          });
+      });
+})
+}
 function getOutput(item) {
-    var videoID = item.id.videoId;
-    var title = item.snippet.title;
-    var description = item.snippet.description;
-    var thumb = item.snippet.thumbnails.high.url;
-    var channelTitle = item.snippet.channelTitle;
-    var videoDate = item.snippet.publishedAt;
+  console.log(item);
+  var videoID = item.id.videoId;
+  var title = item.snippet.title;
+  var description = item.snippet.description;
+  var thumb = item.snippet.thumbnails.high.url;
+  var channelTitle = item.snippet.channelTitle;
+  var videoDate = item.snippet.publishedAt;
 
-    // Build output string
-    var output =  '<div>' +
-                '<div class="list-left">' +
-                '<a data-fancybox data-type="iframe"  href="https://youtube.com/embed/' + videoID + '?rel=0">' +
+  // Build out  string
+  var output =  '<div>' +
+              '<div class="list-left">' +
+              '<a data-fancybox data-type="iframe"  href="https://youtube.com/embed/' + videoID + '?rel=0">' +
 
-                  '<img src="' + thumb + '">' +
-        '</a>'+
-                '</div>' +
-                '<div class="list-right">' +
-                  '<h3><a data-fancybox data-type="iframe"  href="https://youtube.com/embed/' + videoID + '?rel=0">' + title + '</a></h3>' +
-                  '<small>By <span class="cTitle">' + channelTitle + '</span> on ' + videoDate + '</small>' +
-                  '<p>' + description + '</p>' +
-                '</div>' +
+                '<img src="' + thumb + '">' +
+      '</a>'+
               '</div>' +
-              '<div class="clearfix"></div>' +
-              '';
-    return output;
+              '<div class="list-right">' +
+                '<h3><a data-fancybox data-type="iframe"  href="https://youtube.com/embed/' + videoID + '?rel=0">' + title + '</a></h3>' +
+                '<small>By <span class="cTitle">' + channelTitle + '</span> on ' + videoDate + '</small>' +
+                '<p>' + description + '</p>' +
+              '</div>' +
+            '</div>' +
+            '<div class="clearfix"></div>' +
+            '';
+  return output;
+}
 }
