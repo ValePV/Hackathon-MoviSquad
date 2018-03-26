@@ -30,8 +30,8 @@ $(document).ready(function() {
     $('.btn_movie').show();
   });
 
-  $('#detprofile').click(function() {
-    $('.fifth_section').show();
+  $('#user-photo').click(function() {
+    $('#photo').show();
     $('.first_section').hide();
     $('.second-section').hide();
     $('.third_section').hide();
@@ -393,6 +393,7 @@ function IngresoGoogle() {
       var token = result.credential.accesstoken;
       var user= result.user;
       var name = result.user.displayName;
+      var email = result.user.email;
 
       console.log(user);
 
@@ -453,10 +454,13 @@ function InicializarFire() {
     if (user) {
       var displayName = user.displayName;
       var userPhoto = user.photoURL;
+      var email = user.email;
       
       $('.user-navb').append('<img class="user-nav" src ='+userPhoto+' >');
       $('.btn-login').addClass('hidden')
       $('.close-session').removeClass('hidden')
+      $('.user-info').append('<img class="user-information" src ='+userPhoto+' >')
+      $('.info-user').append('<h2>' + displayName + '</h2><h4>' + email + '</h4>')
       // document.querySelector('span.user-name').textContent= displayName;
      // userName.textContent = displayName;
      // if(userPhoto) {
