@@ -10,7 +10,12 @@ body {
   border-top: 0em;
   border-left: 0em;
   border-right: 0em;
-  padding-bottom: 0.5em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.login-navigat{
+  margin-top: 0.2em;
 }
 
 .nav_logo{
@@ -20,15 +25,17 @@ body {
 .btn_sign, .btn_profile {
   background-color: black;
   border: 0em;
-
 }
-
 .btn_profile:hover{
   background-color: rgb(248, 158, 0);
 }*/
 
 .navbar-default .navbar-nav>li>a {
 color: #c7c7c7;
+}
+
+.login-nav{
+  margin-top: 10px;
 }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
@@ -48,77 +55,87 @@ color: #c7c7c7;
 
 }
 
-.nav_bar {
+/*.nav_bar {
   padding-top: 0.5em;
   padding-bottom: 1em !important;
 
-}
+}*/
+
 #login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
     overflow:hidden;
     background-color:rgba(255,255,255,.8);
 }
+
 #login-dp .help-block{
     font-size:12px    
 }
+
 #login-dp .bottom{
     background-color:rgba(255,255,255,.8);
     border-top:1px solid #ddd;
     clear:both;
     padding:14px;
 }
+
 #login-dp .social-buttons{
     margin:12px 0    
 }
+
 #login-dp .social-buttons a{
     width: 49%;
 }
+
 #login-dp .form-group {
     margin-bottom: 10px;
 }
+
 .btn-fb{
     color: #fff;
     background-color:#3b5998;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+
 .btn-fb:hover{
     color: #fff;
-    background-color:#496ebc 
+    background-color:#496ebc;
+
 }
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
+
+.btn-go{
+  color: #fff;
+  background-color:#db4a3c;
+  width: 220px;
+  margin-bottom: 10px;
 }
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
+
+.btn-go:hover{
+  color: #fff;
+  background-color:#db4a3c;
 }
 /*
 .btn_log {
   background-color: black;
   border: 0.1em solid rgb(248, 158, 0);
 }
-
 .btn_log:hover {
   background-color: rgb(248, 158, 0);
   border: 0.1em solid rgb(248, 158, 0);
 }
-
 .btn_log:focus {
   background-color: rgb(248, 158, 0);
   border: 0.1em solid rgb(248, 158, 0);
 }
-
 .btn_log:visited {
   background-color: rgb(248, 158, 0);
   border: 0.1em solid rgb(248, 158, 0);
 }
-
 .btn_log:active {
   background-color: rgb(248, 158, 0);
   border: 0.1em solid rgb(248, 158, 0);
 }
-
 .modal_background {
   background-color: black;
   text-align: center;
@@ -161,13 +178,24 @@ color: #c7c7c7;
 
 #search-movie{
   width: 600px;
-  margin-left: 150px;
-  background-color: rgba(248, 158, 0, 0.5);
+  margin-left: 100px;
+  background-color: transparent;
+  -webkit-box-shadow:none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #fff;
   display: inline-block;
-  color: white;
-
-
 }
+
+#search-movie::placeholder{
+  color:black;
+}
+
+#search-btn {
+  background-color: transparent;
+  border: none;
+}
+
 .title {
   color: rgb(248, 158, 0);
   font-family: 'Libre Franklin', sans-serif;
@@ -224,11 +252,11 @@ color: #c7c7c7;
   margin-left: 0em;
   margin-right: 0em;
 }
-
+/*
 .title_2 {
   color: rgb(248, 158, 0);
   font-family: 'Libre Franklin', sans-serif;
-}
+}*/
 
 .btn_thumb {
   background-color: #c7c7c7;
@@ -274,6 +302,7 @@ label {
 .clasificacion {
   direction: rtl;
   unicode-bidi: bidi-override;
+  display: inline;
 }
 
 label:hover,
@@ -294,9 +323,6 @@ input[type="radio"]:checked ~ label {
   font-size: 25px;
 }
 
-.clasificacion {
-  display: inline;
-}
 #commentBox {
   padding-bottom: 2em;
 }
@@ -320,6 +346,17 @@ input[type="radio"]:checked ~ label {
   background-repeat: no-repeat;
   background-position: 30%;
   
+}
+.user-navb{
+  padding: 5px 2px 0px 0px;
+
+}
+
+.user-nav{
+  width: 40px;
+  padding: 0px;
+  border-radius:50%;
+
 }
 
 .user {
@@ -375,16 +412,18 @@ input[type="radio"]:checked ~ label {
   width: 110%;
 }
 
-.content img {
+/*.content img {
   width: 100%;
+}*/
+.thumbnail a>img, .thumbnail>img {
+  height: 400px;
 }
-
 span{
   border:none;
 }
 
 .text-center{
-  color: rgb(248, 158, 0);;
+  color: rgb(248, 158, 0);
 }
 
 .selec{
@@ -396,10 +435,54 @@ span{
   font-size: 20px;
 }
 #contmovies{
+  margin: 2em 0em 0em 10em;
+}
+.img-mov{
+  width: 300px;
+  height: 400px;
+  
+}
+.txt_movie{
+  color: #fff;
+  margin-top: 1em;
+  text-align:center;
+  cursor: pointer;
+}
+#show{
+  margin: 5em 0em 0em 8em;
+}
+#show h4, #show h3{
+  color: rgb(248, 158, 0);
+}
+
+#show h5{
+  color: #a6adb5;
+}
+
+#trailer-button{
+  background-color: rgb(248, 158, 0);
+  color: black;
+  margin-bottom: 5em;
   margin-top: 2em;
 }
+
+#results{
+  margin-bottom: 5em;
+}
+
+#results h3{
+  margin-top: 5em;
+}
+
+#results a{
+  color: rgb(248, 158, 0);
+}
+
+#results small, #results p{
+  color: #a6adb5;
+}
+
 .mt-5{
-  
   margin-right: 0em;
   
 }

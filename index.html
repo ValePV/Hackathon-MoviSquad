@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 	<meta charset="UTF-8">
- 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
- 	<title> Hackathon </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Hackathon</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
@@ -15,7 +15,7 @@
   <div class="row splash_row">
     <div class="col-xs-12 col-sm-12 col hidden-md col hidden-lg" id="splash">
       <img class="logo_splash" src="assets/images/l2.png">
-        <h4 id="txt_splash">Aquí comienza tu búsqueda para ver películas</h4>
+      <h4 id="txt_splash">Aquí comienza tu búsqueda para ver películas</h4>
     </div>
   </div>
   <!-- Sección - Splash -->
@@ -24,58 +24,43 @@
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header nav_logo">
-        <a class="navbar-brand log" href="#"><img src="assets/images/l2.png" 
+        <a class="navbar-brand log" href="#"><img src="assets/images/l2.png"
           alt="" class="logo">
         </a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse nav_bar" id="navbar-collapse-2">
         <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-      <ul id="login-dp" class="dropdown-menu">
-        <li>
-           <div class="row">
-              <div class="col-md-12">
-                Login via
-                <div class="social-buttons">
-                  <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                  <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+          <li><a href="" class="user-navb"></a></li>
+          <li class="dropdown btn-login">
+            <a href="#" class="login-nav dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+            <ul id="login-dp" class="dropdown-menu">
+              <li>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="bottom text-center">
+                      Login via
+                    </div>
+                    <div>
+                      <a href="#" id="btn-facebook" class="btn btn-fb" style="width: 220px;"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    </div>
+                    <div>
+                      <a href="#" id="btn-google" class="btn btn-go"><i class="fab fa-google-plus-g"></i> Google</a>
+                    </div>
+                  </div>
                 </div>
-                                or
-                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                    <div class="form-group">
-                       <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                       <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-                    </div>
-                    <div class="form-group">
-                       <label class="sr-only" for="exampleInputPassword2">Password</label>
-                       <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-                    </div>
-                    <div class="form-group">
-                       <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                    </div>
-                    <div class="checkbox">
-                       <label>
-                       <input type="checkbox"> keep me logged-in
-                       </label>
-                    </div>
-                 </form>
-              </div>
-              <div class="bottom text-center">
-                New here ? <a href="#"><b>Join Us</b></a>
-              </div>
-           </div>
-        </li>
-      </ul>
-        </li>
-      </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="close-session hidden" id='cerrar'>
+            <a href="#" class="close-nav" style="margin-top: 10px"><b>Close Session</b>
+          </li>
+        </ul>
       </div><!-- /.btn_movil -->
     </div><!-- /.container -->
   </nav><!-- /.navbar -->
   <!-- /.navbar -->
-  <!-- /.Descubre --> 
+  <!-- /.Descubre -->
   <div class="row div_row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 gradient">
       <form id="search-form" role="search">
@@ -111,16 +96,16 @@
         <div class="row content">
           <ul class="slider col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <li>
-              <img src="assets/images/foto1.jpg">
+              <img src="assets/images/xmen.jpg" style="width: 1140px; height: 500px">
             </li>
             <li>
-              <img src="assets/images/foto2.jpg">
+              <img src="assets/images/ani-fantast.jpg" style="width: 1140px; height: 500px">
             </li>
             <li>
-              <img src="assets/images/foto3.jpg">
+              <img src="assets/images/tomrider.jpg" style="width: 1140px; height: 500px">
             </li>
             <li>
-              <img src="assets/images/foto4.jpg">
+              <img src="assets/images/star warse.jpg" style="width: 1140px; height: 500px">
             </li>
           </ul>
         </div>
@@ -134,52 +119,47 @@
     </div><!-- /.container -->
   </section>
   <!--pagina principal-->
-  <!--second section - descubre-->
-  <!--<section class="second_section2">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          <h2 class="title_2"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Descubre películas</h2>
-          <div class="row">
-            <div class="img-random">
-            </div>
-          </div>-->
-          <!--<div class="btn-group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Puntuación <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#"><label for="radio1">★</label></a></li>
-                <li><a href="#"><label for="radio1">★</label><label for="radio1">★</label></a></li>
-                <li><a href="#"><label for="radio1">★</label><label for="radio1">★</label><label for="radio1">★</label></a></li>
-                <li><a href="#"><label for="radio1">★</label><label for="radio1">★</label><label for="radio1">★</label><label for="radio1">★</label></a></li>
-              </ul>
-            </div>-->
-       <!--   </div>-->
-        <!--</div>col-->
-      <!--</div>row-->
-    <!--</div>container-->
- <!--</section>-->
-  <!--second section - descubre-->
-  <!--movie-section-->   
-  <section class="movie-section">
-    <div class="container">
-      <div id="contmovies">
-      
+  <!--movie-section-->
+  <section class="second-section">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="contmovies"></div>
       </div>
     </div>
+   <!-- <div class="row">
+      <div class=" text_frame col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p id="title"></p>
+        <p id="year"></p>
+        <p id="runtime"></p>
+        <p id="plot"></p>
+        <p id="actors"></p>
+        <p id="awards"></p>
+        <p id="recaudacion"></p>
+        <p id="country"></p>
+        <p id="director"></p>
+        <p id="genre"></p>
+        <p id="language"></p>
+        <p id="production"></p>
+        <p id="released"></p>
+        <p id="writer"></p>
+        <p id="metascore"></p>
+        <p id="imdbRating"></p>
+        <p id="img"></p>
+        <p id='trailer'></p>
+        <p id='results'></p>
+      </div>
+    </div>-->
   </section>
 
-  <!--movie-section-->  
-  <!--third section-->    
+  <!--movie-section-->
+  <!--third section-->
   <section class="third_section">
-    <div class="container">
-      <h2 class="title_2"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Filtro</h2>
-      <!--<h3 class="txt_filter">Filtro</h3>-->
-      <div class="row">
-        <div class="showmovies">
-          
-        </div>
+    <div class="showmovies">
+      <div id="show" class="row">
+        
+        
+      </div>
+    </div>
        <!-- <div class="col-xs-6 col-md-3">
           <a href="#" class="thumbnail">
             <iframe width="100%" height="auto" src="https://www.youtube.com/embed/NPNn0JUp9w4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
@@ -204,17 +184,17 @@
             <h4>TITLE</h4>
           </a>
         </div>
-      </div>--><!--row--> 
-    </div><!--container-->
+      </div>--><!--row-->
+    <!--container-->
   </section>
-  <!--third section--> 
-  
-  
+  <!--third section-->
+
+
   <!--fourth section-->
   <section class="fourth_section hide" id="four-vis">
     <div class="container">
       <div class="row">
-        <div id="more-movie"> 
+        <div id="more-movie">
         <!--Aquí va info de pelicula-->
         </div>
         <div class="col-xs12 col-sm-12 col-md-6 col-lg-6">
@@ -257,13 +237,13 @@
       </div>
       <div id="commentList">
       <!--aquí van los comentarios-->
-      
+
       </div>
-      
+
     </div><!--container-->
   </section>
   <!--fourth section-->
-  
+
   <section class="fifth_section">
     <div class="container fifth">
       <h2 class="title_2"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Mi Perfil</h2>
@@ -305,7 +285,7 @@
             <h4 class="text-center">TITLE</h4>
           </a>
         </div>
-      </div><!--row--> 
+      </div><!--row-->
       <div class="btn-group dropup add_info">
         <button type="button" class="btn btn-default circle"><span class="glyphicon glyphicon-plus" aria-hidden="true">More</span>
         </button>
@@ -325,9 +305,9 @@
       <div class="row row_footer">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-5 txt_center">
           <p class="social-icons-header">
-            <a href="facebook.com"><i class="fa fa-facebook"></i></a>
-            <a href="facebook.com"><i class="fa fa-twitter"></i></a>
-            <a href="facebook.com"><i class="fa fa-instagram"></i></a>
+            <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="instagram.com"><i class="fab fa-instagram"></i></a>
           </p>
           <div class="col-xs-12 col-sm-12 col-md-12">
           <h6 class="txt_footer"><a>¿Qué es Genesis?</a> - <a>Ayuda</a> - <a>Política de Privacidad</a> - <a>Términos de uso</a></h6>
@@ -336,31 +316,18 @@
       </div>
     </div>
   </footer>
+
+
+
+
   
-
-
-
-  <!--script-->
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyAl53XQTTqh9ZKSzhhI6CCPGrxjA0ZJrD4",
-        authDomain: "dbgenesis-423f3.firebaseapp.com",
-        databaseURL: "https://dbgenesis-423f3.firebaseio.com",
-        projectId: "dbgenesis-423f3",
-        storageBucket: "",
-        messagingSenderId: "34190671996"
-      };
-      firebase.initializeApp(config);
-  </script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
       <!-- Latest compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="https://use.fontawesome.com/ada9774bec.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
   <script type="text/javascript" src="assets/js/app.js"></script>
-  <script type="text/javascript" src="assets/js/data.js"></script>
-  <script type="text/javascript" src="assets/js/scriptlog.js"></script>
+  
 </body>
 </html>
