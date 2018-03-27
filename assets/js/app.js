@@ -39,15 +39,6 @@ $(document).ready(function() {
     $('.btn_movie').hide();
   });
 
-  /*$('.logout-profile').click(function() {
-    $('.first_section').show();
-    $('.second-section').hide();
-    $('.third_section').hide();
-    $('.fourth_section').hide();
-    $('.fifth').hide();
-    $('.btn_movie').show();
-  });*/
-
   $('#bridge1').click(function() {
     $('.first_section').hide();
     $('.second-section').hide();
@@ -202,10 +193,10 @@ function getMovies(movie) {
       $('#contmovies, #title, #year, #plot, #actors, #awards, #recaudacion, #country, #director, #genre, #language, #production, #metascore, #imdbRating, #released, #writer, #runtime, #img, #trailer, #results').empty();
       search.forEach(el => {
         // console.log(el.Title);
-        $('#contmovies').append(`<div class='thumbnail card'><img class='img-mov' src='${el.Poster}'><p class='txt_movie'>${el.Title}</p></div>`);
+        $('#contmovies').append(`<div class='title-movie thumbnail card'><img class='img-mov' src='${el.Poster}'><p class='txt_movie'>${el.Title}</p></div>`);
       });
 
-      $('.txt_movie').click(function() {
+      $('.title-movie').click(function() {
         let newTitle = ($(this).text()); // obtiene el titulo de la pelicula al ser clickeada
         // console.log(newTitle);
         $.ajax({
@@ -232,28 +223,30 @@ function getMovies(movie) {
       $('.third_section').show();
       $('#showmovies, #contmovies, #title, #year, #plot, #actors, #awards, #recaudacion, #country, #director, #genre, #language, #production, #metascore, #imdbRating, #released, #writer, #runtime, #img, #trailer, #results').empty();
       $('#show').append(`
-          <div class="col-md-3">
-            <img src="${info.Poster}">
-          </div>
-          <div class="col-md-7 col-md-offset-1">
-            <h5>Title:</h5> <h3>${info.Title}</h3>
-            <h5>Argumento:</h5> <h4>${info.Plot}</h4>
-            <h5>Director:</h5> <h4>${info.Director}</h4>
-            <h5>Producción:</h5> <h4>${info.Production}</h4>
-            <h5>Guión:</h5> <h4>${info.Writer}</h4>
-            <h5>Protagonistas:</h5> <h4>${info.Actors}</h4>
-            <h5>Premios:</h5> <h4>${info.Awards}</h4>
-            <h5>Pais:</h5> <h4>${info.Country}</h4>
-            <h5>Idioma:</h5> <h4>${info.Language}</h4>
-            <h5>Año:</h5> <h4>${info.Year}</h4>
-            <h5>Estreno:</h5> <h4>${info.Released}</h4>
-            <h5>Género:</h5> <h4>${info.Genre}</h4>
-            <h5>Duración:</h5> <h4>${info.Runtime}</h4>
-            <h5>Recaudacion:</h5> <h4>${info.BoxOffice}</h4>
-            <h5>Crítica:</h5> <h4>${info.Metascore}</h4>
-            <h5>Nota del Público:</h5> <h4>${info.imdbRating}</h4>
-            <button id="trailer-button" class="btn btn-default" type="button" name="button">Trailer</button>
-          </div>
+          <div class='row'>
+            <div class="col-md-3">
+              <img src="${info.Poster}">
+              <button id="trailer-button" class="btn btn-default btn-trailer" type="button" name="button">Trailer</button>
+            </div>
+            <div class="col-md-7 col-md-offset-1">
+              <h5>Title:</h5> <h3>${info.Title}</h3>
+              <h5>Argumento:</h5> <h4>${info.Plot}</h4>
+              <h5>Director:</h5> <h4>${info.Director}</h4>
+              <h5 class='cont-afterhide'>Producción:</h5> <h4 class='cont-afterhide'>${info.Production}</h4>
+              <h5 class='cont-afterhide'>Guión:</h5> <h4 class='cont-afterhide'>${info.Writer}</h4>
+              <h5>Protagonistas:</h5> <h4>${info.Actors}</h4>
+              <h5 class='cont-afterhide'>Premios:</h5> <h4 class='cont-afterhide'>${info.Awards}</h4>
+              <h5 class='cont-afterhide'>Pais:</h5> <h4>${info.Country}</h4>
+              <h5 class='cont-afterhide'>Idioma:</h5> <h4 class='cont-afterhide'>${info.Language}</h4>
+              <h5 class='cont-afterhide'>Año:</h5> <h4 class='cont-afterhide'>${info.Year}</h4>
+              <h5 class='cont-afterhide'>Estreno:</h5> <h4 class='cont-afterhide'>${info.Released}</h4>
+              <h5 class='cont-afterhide'>Género:</h5> <h4 class='cont-afterhide'>${info.Genre}</h4>
+              <h5 class='cont-afterhide'>Duración:</h5> <h4 class='cont-afterhide'>${info.Runtime}</h4>
+              <h5 class='cont-afterhide'>Recaudacion:</h5> <h4 class='cont-afterhide'>${info.BoxOffice}</h4>
+              <h5 class='cont-afterhide'>Crítica:</h5> <h4 class='cont-afterhide'>${info.Metascore}</h4>
+              <h5 class='cont-afterhide'>Nota del Público:</h5> <h4 class='cont-afterhide'>${info.imdbRating}</h4>
+            </div>
+          </div>  
           <div class='row'>
             <div id='results'>
             </div>
@@ -299,6 +292,7 @@ function getMovies(movie) {
             var output = getOutput(item);
             // creacion para mostrar los resultados en el html
             $('#results').append(output);
+            $('.cont-afterhide').hide();
           });
         });
     });
