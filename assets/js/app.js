@@ -39,6 +39,15 @@ $(document).ready(function() {
     $('.btn_movie').hide();
   });
 
+  $('.user-navb').click(function() {
+    $('#photo').show();
+    $('.first_section').hide();
+    $('.second-section').hide();
+    $('.third_section').hide();
+    $('.fourth_section').hide();
+    $('.btn_movie').hide();
+  });
+
   $('#bridge1').click(function() {
     $('.first_section').hide();
     $('.second-section').hide();

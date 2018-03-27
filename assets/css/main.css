@@ -252,11 +252,25 @@ color: #c7c7c7;
   margin-left: 0em;
   margin-right: 0em;
 }
-/*
+
 .title_2 {
   color: rgb(248, 158, 0);
   font-family: 'Libre Franklin', sans-serif;
-}*/
+  text-decoration: none;
+}
+
+.user-information{
+  width: 260px;
+  border-radius: 50%;
+  margin: 50px 20px;
+}
+
+.info-user{
+  margin: 50px 10px;
+  color: #a6adb5;
+  font-family: 'Libre Franklin', sans-serif;
+  text-decoration: none;
+}
 
 .btn_thumb {
   background-color: #c7c7c7;
