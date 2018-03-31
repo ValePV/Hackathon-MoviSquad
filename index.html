@@ -12,8 +12,8 @@
 </head>
 <body>
   <!-- Sección - Splash -->
-  <div class="row splash_row">
-    <div class="col-xs-12 col-sm-12 col hidden-md col hidden-lg" id="splash">
+  <div class="row splash_row hidden-md hidden-lg">
+    <div class="col-xs-12 col-sm-12" id="splash">
       <img class="logo_splash" src="assets/images/l2.png">
       <h4 id="txt_splash">Aquí comienza tu búsqueda para ver películas</h4>
     </div>
@@ -21,52 +21,61 @@
   <!-- Sección - Splash -->
   <!-- Second navbar for sign in -->
   <nav class="navbar navbar-default navigation">
-    <div class="container">
+    <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header nav_logo">
-        <a class="navbar-brand log" href="#"><img src="assets/images/l2.png"
-          alt="" class="logo">
+        <a class="navbar-brand log" href="#">
+          <img src="assets/images/l2.png" alt="" class="logo">
         </a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
       </div>
+
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse nav_bar" id="navbar-collapse-2">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#photo" class="user-navb" id='user-photo' ></a></li>
-          <li class="dropdown btn-login">
-            <a href="#" class="login-nav dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-            <ul id="login-dp" class="dropdown-menu">
-              <li>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="bottom text-center">
-                      Login via
-                    </div>
-                    <div>
-                      <a href="#" id="btn-facebook" class="btn btn-fb" style="width: 220px;"><i class="fab fa-facebook-f"></i> Facebook</a>
-                    </div>
-                    <div>
-                      <a href="#" id="btn-google" class="btn btn-go"><i class="fab fa-google-plus-g"></i> Google</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="close-session hidden" id='cerrar'>
-            <a href="#" class="close-nav" style="margin-top: 10px"><b>Close Session</b></a>
-          </li>
-        </ul>
-      </div><!-- /.btn_movil -->
-    </div><!-- /.container -->
-  </nav><!-- /.navbar -->
+                <li><a href="#photo" class="user-navb" id='user-photo' ></a></li>
+                <li class="dropdown btn-login">
+                  <a href="#" class="login-nav dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                  <ul id="login-dp" class="dropdown-menu">
+                    <li>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="bottom text-center">
+                            Login via
+                          </div>
+                          <div>
+                            <a href="#" id="btn-facebook" class="btn btn-fb" style="width: 220px;"><i class="fab fa-facebook-f"></i> Facebook</a>
+                          </div>
+                          <div>
+                            <a href="#" id="btn-google" class="btn btn-go"><i class="fab fa-google-plus-g"></i> Google</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="cont-myperfil hidden">
+                  <a href="#" class="my-perfil" style="margin-top: 10px"><b>Mi Perfil</b></a>
+                </li>
+                <li class="close-session hidden" id='cerrar'>
+                  <a href="#" class="close-nav" style="margin-top: 10px"><b>Close Session</b></a>
+                </li>
+              </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  
   <!-- /.navbar -->
   <!-- /.Descubre -->
   <div class="row div_row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 gradient">
       <form id="search-form" role="search">
-        <div class="form-group">
-          <input type="text" id="search-movie" class="form-control" placeholder="Busca tu Pelicula..." />
-          <button type="submit" id="search-btn" class="btn btn-warning"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        <div class="form-group row">
+          <div class="col-xs-10 col-sm-10 col-md-7 col-md-offset-3 col-lg-7 col-lg-offset-3">
+            <input type="text" id="search-movie" class="form-control" placeholder="Busca tu Pelicula..." />
+            <button type="submit" id="search-btn" class="btn btn-warning"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </div>
         </div>
       </form>
 
@@ -79,33 +88,33 @@
   <!--pagina principal-->
   <section class="first_section">
     <div class="container">
-      <div class="row">
+      <!--<div class="row">
         <div class="col-xs-11 col-sm-11 col hidden-md col hidden-lg input_search">
           <div class="navbar-form navbar-right right_search" role="search">
             <div class="form-group input_movil">
-              <input type="text" class="form-control" placeholder="Search" />
+              <input type="text" id="search-movie" class="form-control" placeholder="Busca tu Pelicula..." />
             </div>
-            <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            <button type="submit" id="search-btn" class="btn btn-warning"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
           </div>
         </div>
-      </div>
+      </div>-->
       <div class="slideshow">
         <div class="content-title page-header">
-          <h1 class="text-center">Próximos estrenos</h1>
+          <h1 class="text-center title-princ">Próximos estrenos</h1>
         </div>
         <div class="row content">
           <ul class="slider col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <li>
-              <img src="assets/images/xmen.jpg" style="width: 1140px; height: 500px">
+              <img class="slider-img img-responsive" src="assets/images/xmen.jpg">
             </li>
             <li>
-              <img src="assets/images/ani-fantast.jpg" style="width: 1140px; height: 500px">
+              <img class="slider-img img-responsive" src="assets/images/ani-fantast.jpg">
             </li>
             <li>
-              <img src="assets/images/tomrider.jpg" style="width: 1140px; height: 500px">
+              <img class="slider-img img-responsive" src="assets/images/tomrider.jpg">
             </li>
             <li>
-              <img src="assets/images/star warse.jpg" style="width: 1140px; height: 500px">
+              <img class="slider-img img-responsive" src="assets/images/star warse.jpg">
             </li>
           </ul>
         </div>
@@ -246,10 +255,10 @@
 
   <section class="fifth_section" id='photo'>
     <div class="container fifth">
-      <h2 class="title_2"></span> Mi Perfil</h2>
+      <h2 class="title_2 text-center"> Mi Perfil</h2>
       <!--<h3 class="txt_form">Mi perfil</h3>-->
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="row user-user">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
           <div class="user-info">
             
           </div>
@@ -261,6 +270,16 @@
           </div>
           
         </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h2 class="title_2 text-center"> Mis Favoritos</h2>
+          <div class="user-search">
+            
+          </div>
+          
+        </div>
+        
       </div>
       
     <!-- <div class="row">

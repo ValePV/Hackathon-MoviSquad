@@ -36,6 +36,7 @@ color: #c7c7c7;
 
 .login-nav{
   margin-top: 10px;
+  margin-right: 30px;
 }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
@@ -52,7 +53,10 @@ color: #c7c7c7;
 .logo {
   width: 100%;
   display: inline-block;
+}
 
+.navbar-brand>img{
+  margin-left: 70px;
 }
 
 /*.nav_bar {
@@ -178,7 +182,6 @@ color: #c7c7c7;
 
 #search-movie{
   width: 600px;
-  margin-left: 100px;
   background-color: transparent;
   -webkit-box-shadow:none;
   border: none;
@@ -257,19 +260,33 @@ color: #c7c7c7;
   color: rgb(248, 158, 0);
   font-family: 'Libre Franklin', sans-serif;
   text-decoration: none;
+  margin-top: 30px;
 }
 
 .user-information{
   width: 260px;
   border-radius: 50%;
+  border:2px solid rgb(255, 176, 0);
   margin: 50px 20px;
 }
 
+.user-user{
+  border:1px solid rgb(248, 158, 0);
+  border-radius: 1%;
+  background-image: url(../images/banner.png);
+  background-size: cover;
+}
+
 .info-user{
-  margin: 50px 10px;
-  color: #a6adb5;
+  margin: 150px 0px;
+  color: #000;
   font-family: 'Libre Franklin', sans-serif;
   text-decoration: none;
+}
+
+.slider-img{
+  width: 1140px; 
+  height: 500px
 }
 
 .btn_thumb {
@@ -436,7 +453,7 @@ span{
   border:none;
 }
 
-.text-center{
+.title-princ{
   color: rgb(248, 158, 0);
 }
 
@@ -477,6 +494,14 @@ span{
   background-color: rgb(248, 158, 0);
   color: black;
   margin-bottom: 5em;
+  margin-top: 2em;
+}
+
+.btn-fav{
+  background-color: rgb(248, 158, 0);
+  color: black;
+  margin-bottom: 5em;
+  margin-left: 1.5em;
   margin-top: 2em;
 }
 
@@ -544,4 +569,74 @@ span{
   font-size: 10px;
   cursor: pointer;
  
+}
+
+
+@media (max-width: 768px) {
+  .navbar-brand>img{
+    margin-left: 30px;
+  }
+
+  .navbar-toggle{
+    margin-top: 15px;
+    margin-left: 130px;
+    background-color: transparent;
+    color: #c7c7c7;
+    padding: 7px 10px;
+    border:1px solid #c7c7c7;
+  }
+
+  .glyphicon-menu-hamburger:hover{
+    color: #000;
+  }
+
+  #search-movie{
+    width: 200px;
+    margin-left: 30px;
+    background-color: transparent;
+    -webkit-box-shadow:none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+  }
+
+  #contmovies{
+    margin: 2em 0em 0em 5em;
+  }
+
+  #show{
+    margin: 5em 0em 0em 5em;
+  }
+
+  #trailer-button{
+    background-color: rgb(248, 158, 0);
+    color: black;
+    margin-bottom: 5em;
+    margin-top: 2em;
+  }
+
+  #trailer-button:hover{
+    background-color: #a6adb5;
+    color:rgb(248, 158, 0);
+  }
+
+  .btn-fav{
+    background-color: rgb(248, 158, 0);
+    color: black;
+    margin-bottom: 5em;
+    margin-left: 2em;
+    margin-top: 2em;
+  }
+
+  .btn-fav:hover{
+    background-color: #a6adb5;
+    color:rgb(248, 158, 0);
+  }
+
+  .btn{
+    display: inline-block;
+  }
+
+  
 }
